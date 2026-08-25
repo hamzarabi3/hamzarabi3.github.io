@@ -1,0 +1,31 @@
+---
+title: "Generative AI Image Platform"
+description: "Grew to 23,000 monthly organic visitors, then shut it down when the unit economics did not hold."
+date: 2024-10-01
+categories: [Growth, SEO, Generative AI]
+image: thumbnail.png
+image-alt: "Screenshot of the AI image platform"
+toc: false
+---
+
+A generative-AI SaaS for image enhancement and transformation, launched
+alongside a set of free SEO-focused image utilities that acted as the
+acquisition channel. It attracted over 23,000 monthly organic visitors before I
+discontinued it.
+
+Built on AWS Lambda, DynamoDB, and SageMaker, with third-party AI APIs for
+parts of the generation pipeline.
+
+![Placeholder, replace with a real screenshot.](screenshot-01.png)
+
+## Acquisition
+
+Product analytics ran on Google Analytics 4, Google Search Console, and Python,
+tracking acquisition, activation, conversion funnels, and SEO performance to
+drive iterative improvements.
+
+## Why it stopped
+
+The traffic was real, but the infrastructure economics didn't work at that
+conversion rate. Shutting it down was the right call, and the write-up of *why*
+is more interesting than the launch. Worth expanding here.

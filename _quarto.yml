@@ -1,0 +1,58 @@
+project:
+  type: website
+  output-dir: _site
+  # CNAME must be copied into _site on every render, or publishing
+  # unbinds the custom domain in GitHub Pages settings.
+  resources:
+    - CNAME
+    # macOS writes .DS_Store into every directory; without this they get
+    # copied into _site and published, exposing directory listings.
+    - "!**/.DS_Store"
+
+website:
+  title: "Hamza Rabi"
+  site-url: "https://hamzarabi.com"
+  description: "Product manager and founder. I ship products, validate them with real users, and iterate fast."
+  favicon: assets/favicon.png
+  navbar:
+    logo: ""
+    title: "Hamza Rabi"
+    left:
+      - href: projects/index.qmd
+        text: Projects
+      - href: blog/index.qmd
+        text: Writing
+      - href: about.qmd
+        text: About
+    right:
+      - icon: linkedin
+        href: https://www.linkedin.com/in/hamza-rabi
+        aria-label: LinkedIn
+      - icon: github
+        href: https://github.com/hamzarabi3
+        aria-label: GitHub
+  page-footer:
+    left: "© 2026 Hamza Rabi"
+    right: "Built with [Quarto](https://quarto.org)"
+  twitter-card: true
+  open-graph: true
+
+format:
+  html:
+    theme:
+      - cosmo
+      - styles.scss
+    # Wide body column. Prose is re-constrained to a readable measure in
+    # styles.scss per page type; grids and screenshots use the full width.
+    grid:
+      body-width: 1280px
+      sidebar-width: 0px
+      margin-width: 0px
+    toc: false
+    anchor-sections: false
+    link-external-newwindow: true
+    include-in-header:
+      text: |
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">

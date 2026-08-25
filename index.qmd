@@ -1,0 +1,74 @@
+---
+pagetitle: "Hamza Rabi"
+description-meta: "Product manager and founder. I ship products, validate them with real users, and iterate fast."
+listing:
+  id: featured-projects
+  contents: projects/*/index.qmd
+  type: grid
+  grid-columns: 3
+  max-items: 3
+  sort: "date desc"
+  fields: [image, title, description]
+  image-height: "180px"
+  page-size: 3
+toc: false
+section-divs: false
+---
+
+::: {.hero}
+# Hamza Rabi {.title}
+
+::: {.hero-lead}
+I build products and find out quickly whether they work. Four shipped end to
+end, from customer interviews through launch, instrumentation, and the decision
+to double down or shut it down.
+:::
+
+Two years founding and shipping my own products across generative AI,
+marketplaces, and consumer iOS. Before that, two and a half years embedded in
+product teams at [talabat](https://www.talabat.com), defining the metrics and
+running the tests behind launches across eight MENA markets.
+
+::: {.availability}
+Open to product manager, product owner, and founding roles. [hamza-rabi@outlook.com](mailto:hamza-rabi@outlook.com)
+:::
+
+:::
+
+::: {.capabilities}
+
+::: {.capability}
+[Discovery & validation]{.cap-title}
+
+Customer interviews, prototypes, and launches that test the assumption rather
+than decorate it. I onboarded restaurant partners in person, and I shut down a
+product with 23,000 monthly visitors once the unit economics stopped adding up.
+:::
+
+::: {.capability}
+[Ship and iterate]{.cap-title}
+
+Four products taken from idea to the App Store and to production: a generative
+AI SaaS, a three-sided marketplace, and privacy-first iOS apps. Design, build,
+launch, support, repeat.
+:::
+
+::: {.capability}
+[Decide with evidence]{.cap-title}
+
+Instrumentation, funnels, retention, and A/B tests. I define the metrics and
+read them myself instead of waiting in an analytics queue, which is usually the
+difference between iterating this week and next quarter.
+:::
+
+:::
+
+::: {.section-head}
+::: {.section-label}
+Products I've shipped
+:::
+[All projects →](projects/index.qmd){.section-link}
+:::
+
+::: {#featured-projects}
+:::

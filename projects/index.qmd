@@ -1,0 +1,15 @@
+---
+title: "Projects"
+listing:
+  contents: "*/index.qmd"
+  type: grid
+  grid-columns: 3
+  sort: "date desc"
+  fields: [image, title, description, categories]
+  image-height: "220px"
+  categories: true
+  page-size: 12
+  feed: false
+toc: false
+body-classes: listing-page
+---

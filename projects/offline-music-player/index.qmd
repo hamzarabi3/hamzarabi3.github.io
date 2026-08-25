@@ -1,0 +1,29 @@
+---
+title: "Privacy-First Offline Music Player"
+description: "Roughly 1,000 daily active users and 4.8/5 on the App Store, grown entirely on word of mouth."
+date: 2025-09-01
+categories: [Retention, iOS, Product Analytics]
+image: thumbnail.png
+image-alt: "Screenshot of the offline music player on iPhone"
+toc: false
+---
+
+A privacy-first offline music player for iOS, built and still maintained. It
+has grown organically to roughly 1,000 daily active users and a 4.8/5 App
+Store rating, through community feedback and word of mouth, with no paid
+acquisition.
+
+![Placeholder, replace with a real screenshot.](screenshot-01.png)
+
+## Instrumentation
+
+Behavior is instrumented with PostHog and Google Analytics 4 to guide product
+decisions: which flows people actually complete, where they drop, and which
+requests in reviews correspond to real usage rather than loud minorities.
+
+![Placeholder, replace with a real screenshot.](screenshot-02.png)
+
+## Notes
+
+Good place to write up a specific decision the analytics changed your mind
+about. That's the part readers remember.

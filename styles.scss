@@ -1,0 +1,507 @@
+/*-- scss:defaults --*/
+
+// Typography: Newsreader for headings, Inter for everything else.
+$font-family-sans-serif: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !default;
+$headings-font-family: "Newsreader", Georgia, serif !default;
+$font-size-root: 17px !default;
+$line-height-base: 1.65 !default;
+
+// Restrained palette — near-black on warm off-white.
+$body-bg: #fdfdfc !default;
+$body-color: #24211d !default;
+$link-color: #24211d !default;
+$link-hover-color: #9a6b3f !default;
+
+$navbar-bg: $body-bg !default;
+$navbar-fg: #24211d !default;
+
+$gray-200: #eceae5 !default;
+$gray-500: #7d7873 !default;
+
+$border-color: #e6e3dd !default;
+$headings-font-weight: 500 !default;
+
+/*-- scss:rules --*/
+
+// Page chrome spans the full width; running text is pulled back to a
+// readable measure per page type further down.
+$content-max: 1280px;
+$measure: 40rem;
+
+// ---------- Layout ----------
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+main.content {
+  padding-top: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+// Navbar and footer share the body column's outer bounds so the site title
+// lines up with the content beneath it at every width.
+.navbar > .navbar-container,
+.nav-footer {
+  max-width: $content-max;
+  margin: 0 auto;
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+// ---------- Navbar ----------
+
+.navbar {
+  border-bottom: 1px solid $border-color;
+  padding: 0.7rem 0;
+
+  .navbar-title {
+    font-family: $headings-font-family;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-link {
+    font-size: 0.92rem;
+    color: $gray-500 !important;
+    transition: color 0.15s ease;
+
+    &:hover,
+    &.active {
+      color: $body-color !important;
+    }
+  }
+}
+
+// ---------- Typography ----------
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.015em;
+}
+
+h1.title {
+  font-size: 2.4rem;
+  margin-bottom: 0.4rem;
+}
+
+h2 {
+  font-size: 1.45rem;
+  margin-top: 2.75rem;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+  border-bottom: 1px solid rgba(154, 107, 63, 0.35);
+  transition: border-color 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    border-bottom-color: $link-hover-color;
+  }
+}
+
+// Links that are structural, not prose, shouldn't be underlined.
+.navbar a,
+.quarto-grid-item a,
+.quarto-listing a,
+.page-footer a,
+.section-link,
+a.quarto-title-author-name {
+  border-bottom: none;
+}
+
+// ---------- Home: hero ----------
+
+.hero {
+  padding: 3rem 0 3.5rem;
+  border-bottom: 1px solid $border-color;
+
+  h1.title {
+    font-size: clamp(2.75rem, 5.5vw, 4.25rem);
+    line-height: 1.05;
+    margin-bottom: 1.75rem;
+  }
+
+  // The lead sets the page's voice — larger, but still on a tight measure
+  // so it stays readable on a wide screen.
+  .hero-lead p {
+    font-family: $headings-font-family;
+    font-size: clamp(1.3rem, 2vw, 1.65rem);
+    line-height: 1.45;
+    max-width: 54ch;
+    margin-bottom: 1.5rem;
+  }
+
+  > p {
+    font-size: 1.05rem;
+    color: $gray-500;
+    max-width: $measure;
+  }
+}
+
+// Availability note — a quiet status line, not a banner.
+.availability {
+  margin-top: 2rem;
+
+  p {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.55rem;
+    font-size: 0.92rem;
+    color: $body-color;
+    margin-bottom: 0;
+  }
+
+  // Small dot marker, drawn rather than typed so it stays crisp.
+  p::before {
+    content: "";
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background: #6f9c6a;
+    flex: none;
+    transform: translateY(-0.1rem);
+  }
+}
+
+// ---------- Home: capability band ----------
+
+.capabilities {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  padding: 3rem 0 3.5rem;
+}
+
+.capability {
+  border-top: 2px solid $body-color;
+  padding-top: 0.9rem;
+
+  .cap-title {
+    display: block;
+    font-family: $headings-font-family;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: $gray-500;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+}
+
+// ---------- Section headers ----------
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid $border-color;
+  margin-bottom: 1.75rem;
+}
+
+.section-label {
+  font-family: $font-family-sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: $gray-500;
+  margin-bottom: 0;
+}
+
+.section-link {
+  font-size: 0.88rem;
+  color: $gray-500;
+  white-space: nowrap;
+
+  &:hover {
+    color: $link-hover-color;
+  }
+}
+
+// ---------- Project gallery (grid listing) ----------
+
+.quarto-grid-item {
+  border: none !important;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+
+  .card-img-top,
+  img.thumbnail-image {
+    border-radius: 3px;
+    border: 1px solid $border-color;
+    object-fit: cover;
+    transition: border-color 0.2s ease;
+  }
+
+  &:hover img.thumbnail-image {
+    border-color: #cfcac1;
+  }
+
+  .card-body {
+    padding: 0.9rem 0 0;
+  }
+
+  .card-title {
+    font-family: $headings-font-family;
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 0.35rem;
+  }
+
+  .card-text,
+  .listing-description {
+    font-size: 0.92rem;
+    color: $gray-500;
+    line-height: 1.55;
+  }
+
+  .listing-categories {
+    margin-top: 0.65rem;
+  }
+}
+
+.listing-category {
+  font-size: 0.72rem !important;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $gray-500 !important;
+  background: $gray-200;
+  border: none !important;
+  border-radius: 2px;
+  padding: 0.16rem 0.45rem !important;
+  margin-right: 0.3rem;
+}
+
+// ---------- Writing (default listing) ----------
+
+// Quarto emits .body before .metadata and reorders them with flex `order`
+// rules that outrank ours. Explicit grid placement sidesteps that entirely:
+// the date takes the left gutter, the post body the column beside it.
+.quarto-listing-default .quarto-post {
+  display: grid;
+  grid-template-columns: 7rem minmax(0, #{$measure});
+  column-gap: 2rem;
+  padding: 1.35rem 0;
+  border-bottom: 1px solid $border-color;
+  max-width: 900px;
+
+  .metadata {
+    grid-column: 1;
+    grid-row: 1;
+    padding-top: 0.3rem;
+  }
+
+  .body {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .listing-date {
+    font-size: 0.85rem;
+    color: $gray-500;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .listing-title {
+    font-family: $headings-font-family;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+  }
+
+  .listing-description {
+    font-size: 0.94rem;
+    color: $gray-500;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// ---------- Prose pages ----------
+
+// About, blog posts, and project write-ups use the full width as a two-column
+// editorial layout: a sticky title/metadata rail on the left, body copy on a
+// readable measure to its right. Running text full-bleed would be unreadable,
+// and a lone centered column wastes the screen.
+body.prose-page,
+body.project-page {
+  main.content {
+    display: grid;
+    grid-template-columns: minmax(200px, 280px) minmax(0, 860px);
+    // Column gap only — a row gap here would space out every block in the
+    // text column, since each one is its own grid row.
+    gap: 0 4rem;
+    align-items: start;
+
+    // Everything that isn't the title block belongs in the text column.
+    > * {
+      grid-column: 2;
+      min-width: 0;
+    }
+
+    > #title-block-header {
+      grid-column: 1;
+      position: sticky;
+      top: 5.5rem;
+      padding-top: 0.4rem;
+    }
+
+    // Body copy keeps a tight measure; figures may run wider than the text,
+    // which is what gives screenshots room to breathe.
+    p,
+    ul,
+    ol,
+    h2,
+    h3,
+    blockquote {
+      max-width: $measure;
+    }
+  }
+
+  // Rail typography — the page title is a label here, not a banner.
+  #title-block-header {
+    h1.title {
+      font-size: 1.75rem;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .description {
+      font-size: 0.92rem;
+      color: $gray-500;
+      line-height: 1.55;
+      margin-top: 0.75rem;
+    }
+
+    .quarto-categories {
+      gap: 0.3rem;
+    }
+  }
+}
+
+// Collapse the rail into a normal stacked header on narrow screens.
+@media (max-width: 991px) {
+  body.prose-page,
+  body.project-page {
+    main.content {
+      display: block;
+
+      > #title-block-header {
+        position: static;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    #title-block-header h1.title {
+      font-size: 2.1rem;
+    }
+  }
+}
+
+// ---------- Figures / screenshots ----------
+
+figure {
+  margin: 2.25rem 0;
+}
+
+figure img,
+.figure img,
+p > img {
+  border: 1px solid $border-color;
+  border-radius: 3px;
+  max-width: 100%;
+}
+
+figcaption,
+.figure-caption {
+  font-size: 0.85rem !important;
+  color: $gray-500 !important;
+  margin-top: 0.6rem;
+  text-align: left !important;
+}
+
+// ---------- Footer ----------
+
+.nav-footer {
+  border-top: 1px solid $border-color;
+  font-size: 0.85rem;
+  color: $gray-500;
+  margin-top: 5rem;
+
+  a {
+    color: $gray-500;
+  }
+}
+
+// Project pages carry a `date` for gallery sorting, but a "Published"
+// stamp reads oddly on a project write-up — hide it there only.
+// !important is needed: Quarto's own title-block CSS is injected after the
+// theme bundle and sets `display: grid` on this element.
+body.project-page .quarto-title-meta {
+  display: none !important;
+}
+
+// ---------- Responsive ----------
+
+@media (max-width: 991px) {
+  .capabilities {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  main.content {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .navbar > .navbar-container,
+  .nav-footer {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .hero {
+    padding: 2rem 0 2.5rem;
+  }
+
+  .capabilities {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding: 2.25rem 0 2.5rem;
+  }
+
+  // Stack date above title on narrow screens.
+  .quarto-listing-default .quarto-post {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 0.35rem;
+
+    .metadata {
+      grid-column: 1;
+      grid-row: 1;
+      padding-top: 0;
+    }
+
+    .body {
+      grid-column: 1;
+      grid-row: 2;
+    }
+  }
+}
