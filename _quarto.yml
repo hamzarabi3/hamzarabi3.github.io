@@ -12,18 +12,11 @@ project:
 website:
   title: "Hamza Rabi"
   site-url: "https://hamzarabi.com"
-  description: "Product manager and founder. I ship products, validate them with real users, and iterate fast."
+  description: "Data scientist working on advanced analytics, experimentation, causal inference, and machine learning."
   favicon: assets/favicon.png
   navbar:
     logo: ""
     title: "Hamza Rabi"
-    left:
-      - href: projects/index.qmd
-        text: Projects
-      - href: blog/index.qmd
-        text: Writing
-      - href: about.qmd
-        text: About
     right:
       - icon: linkedin
         href: https://www.linkedin.com/in/hamza-rabi
