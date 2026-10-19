@@ -21,9 +21,6 @@ website:
       - icon: linkedin
         href: https://www.linkedin.com/in/hamza-rabi
         aria-label: LinkedIn
-      - icon: github
-        href: https://github.com/hamzarabi3
-        aria-label: GitHub
   page-footer:
     left: "© 2026 Hamza Rabi"
     right: "Built with [Quarto](https://quarto.org)"
