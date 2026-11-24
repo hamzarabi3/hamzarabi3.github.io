@@ -34,7 +34,7 @@ Products built and operated since 2024
 :::
 
 ::: {.stat}
-[20,000+]{.stat-n}
+[30,000+]{.stat-n}
 
 Organic installs for Steve, with ChatGPT as the top referrer
 :::
@@ -116,7 +116,7 @@ and there was no acquisition channel that could scale.
 :::
 
 ::: {.project-body}
-An offline music player for people who own their library. **20,000+
+An offline music player for people who own their library. **30,000+
 installs, around 1,000 daily users and a 4.8 rating, with zero ad spend.**
 
 It grew through a Reddit community built around user feedback and a public
